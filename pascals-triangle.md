@@ -38,3 +38,37 @@ var getRow = function(rowIndex) {
 };
 
 ```
+
+> **Problem:** Given a non-negative integer `numRows`, generate the first `numRows` of Pascal's triangle.
+
+```
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+
+function getItem(j, row) {
+    if (j < 0 || j >= row.length) {
+        return 0
+    } else {
+        return row[j]
+    }
+}
+
+var generate = function(numRows) {
+    var rows = [[1]]
+    
+    for (let i = 0; i <= (numRows - 1); ++i) {
+        var newRow = []
+        for (let j = 0; j <= i; ++j) {
+            let digit = getItem(j-1, rows[i]) + getItem(j, rows[i])
+            newRow.push(digit)
+        }
+        rows.push(newRow)
+    }
+    
+    rows.shift()
+    return rows
+    
+};
+```
