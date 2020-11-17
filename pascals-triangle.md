@@ -5,6 +5,8 @@
 * Use a for-loop to generate each row of Pascal's Triangle until we reach `rowIndex`.
 * Inside the for-loop, use another for-loop to generate each row's values, storing them inside the `newRow` variable.
     * Generate each row by getting the previous element and adding the current element to `newRow`
+ * Set `row` to `newRow`
+ * return `row`
 
 ```
 /**
